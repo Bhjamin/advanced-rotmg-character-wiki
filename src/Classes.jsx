@@ -60,9 +60,55 @@ const Classes = ({resetViewHandler}) => {
                 }
 
             ],
-            armoursOfInterest: {
+            armoursOfInterest: [
+                {
+                    armourName: 'Robe of the Ancient Intellect',
+                    armourPic: 'https://i.imgur.com/FFK4t7E.png',
+                    tier: "15",
+                    equipStats: "+75 MP, +6 ATK, +17 DEF, +8 WIS",
+                    proc: "N/A",
+                    dropsFrom: "Oryx the Mad God 3",
+                    notes: "Most versatile robe"
+                },
+                {
+                    armourName: 'Robe of the Mad Scientist',
+                    armourPic: 'https://i.imgur.com/SwTLhZA.png',
+                    tier: "UT",
+                    equipStats: "+12 DEF, +5 VIT, +5 WIS",
+                    proc: "20% MP discount on ability use",
+                    dropsFrom: "Dr. Terrible",
+                    notes: "Good robe for when you want to spam your ability"
+                },
+                {
+                    armourName: 'Diplomatic Robe',
+                    armourPic: 'https://i.imgur.com/hHyzrLB.png',
+                    tier: "UT",
+                    equipStats: "+11 DEF, +50 HP, +10 ATK",
+                    proc: "On ability use, summon a portal that deals 125 damage and zaps enemies in a radius of 5 every .4 seconds. The portal lasts 4 seconds and has a cooldown of 8 seconds.",
+                    dropsFrom: "Chancellor Dammah",
+                    notes: "Best robe for crowd control"
+                },
+                {
+                    armourName: 'Vesture of Duality',
+                    armourPic: 'https://i.imgur.com/QjfsjIn.png',
+                    tier: "UT",
+                    equipStats: "+12 DEF, +5 SPD, +5 ATK, +40 MP",
+                    proc: "On ability use, +15 ATK and -6 DEF for 5 seconds",
+                    dropsFrom: "Archbishop Leucoryx",
+                    notes: "Best robe for huge damage output"
+                },
+                {
+                    armourName: 'Robe of the Star Mother',
+                    armourPic: 'https://i.imgur.com/TfNgqCU.png',
+                    tier: "14",
+                    equipStats: "+15 DEF, +7 WIS, +5 ATK, +65 MP",
+                    proc: "N/A",
+                    dropsFrom: "Archbishop Leucoryx, Chancellor Dammah, Chief Beisa, Treasurer Gemsbok, Crystal Entity, Crystal Worm Mother, Killer Bee Queen, Factory Control Core, Marble Colossus, Void Entity, Twilight Archmage, The Forgotten King",
+                    notes: "Easiest end-game robe to get"
+                }
 
-            },
+
+            ],
             abilitiesOfInterest: {
 
             }
@@ -116,6 +162,21 @@ const Classes = ({resetViewHandler}) => {
                             <p>Damage when attack is maxed: {weapon.damageWithMaxedAtk}</p>
                             <p>Drops from: {weapon.dropsFrom}</p>
                             <p>Notes: {weapon.notes}</p>
+                        </div>
+                    ))}
+                    </section>
+
+                    <h1 className="m-2 text-white text-2xl">Armours of Interest</h1>
+                    <section className="flex flex-row">
+                    {character.armoursOfInterest.map((armour) => (
+                        <div className="border-2 p-2 w-1/4">
+                            <img src={armour.armourPic}/>
+                            <h2>{armour.armourName}</h2>
+                            <p>Tier: {armour.tier}</p>
+                            <p>On Equip: {armour.equipStats}</p>
+                            <p>Special Ability: {armour.proc}</p>
+                            <p>Drops from: {armour.dropsFrom}</p>
+                            <p>Notes: {armour.notes}</p>
                         </div>
                     ))}
                     </section>
